@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :participations
   resources :users
   resources :events
-  root 'pages#index'
+  root 'events#index'
 
 end
