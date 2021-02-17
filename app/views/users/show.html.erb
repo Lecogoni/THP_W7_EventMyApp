@@ -12,5 +12,8 @@
 <div class="container">
   <h3>My Event - que c'est moi qui les ai créés</h3>
 
-  <%= puts @my_event %> 
+  <% my_events = @user.events %>
+  <% my_events.each do |event| %>
+    <p><%= event.title %></p>
+  <% end %> 
 </div>
