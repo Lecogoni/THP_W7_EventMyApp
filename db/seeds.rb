@@ -8,8 +8,19 @@
 
 require 'faker'
 
-
+City.destroy_all
 Event.destroy_all
+
+2.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email(domain: 'yopmail.com'),
+    encrypted_password: "123456", 
+    description: Faker::Movies::HarryPotter.quote
+  )
+end
+puts "2 User"
 
 
 location = ["Paris", "Bordeaux", "Marseille", "NY", "Vezoul", "Bagneux"]
@@ -25,4 +36,4 @@ Event.create(
   location: location.sample
 )
 end
-puts " 4 Event"
+puts " x Event"
