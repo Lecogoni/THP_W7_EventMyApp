@@ -22,7 +22,11 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
 
-     @event = Event.new(event_params)
+    if current_user == nil
+      redirect_to root_path, success: "you must be register and login to create an event!"
+    end
+
+    @event = current_user.events.new(event_params)
 
     if @event.save
       redirect_to root_path, success: "Event enregistré!"
@@ -61,6 +65,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location)
+      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location, :user_id)
     end
 end

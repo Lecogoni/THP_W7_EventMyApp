@@ -42,7 +42,7 @@
 
           <% if user_signed_in? %>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-              Get in
+              Get out
             </button>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
               <li class="dropdown-item active"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
@@ -52,7 +52,7 @@
             </ul>
           <% else %>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                Get out
+                Get in
               </button>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                 <li class="dropdown-item"><%= link_to "Sign in", new_user_session_path %></li>
