@@ -29,7 +29,7 @@ class EventsController < ApplicationController
     @event = current_user.events.new(event_params)
 
     if @event.save
-      redirect_to root_path, success: "Event enregistré!"
+      redirect_to @event, success: "Event enregistré!" 
     else
       render :new
     end

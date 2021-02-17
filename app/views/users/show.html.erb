@@ -14,6 +14,8 @@
 
   <% my_events = @user.events %>
   <% my_events.each do |event| %>
-    <p><%= event.title %></p>
+    <ul>
+      <li><h4><%= event.title.capitalize %></h4></li>
+    </ul>
   <% end %> 
 </div>
